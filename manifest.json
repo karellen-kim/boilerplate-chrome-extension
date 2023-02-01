@@ -1,15 +1,21 @@
 {
-  "manifest_version": 2,
-
   "name": "Chrome extension example",
-  "description": "Chrome extension example",
-  "version": "1.0",
-
-  "browser_action": {
-   "default_icon": "icon.png",
-   "default_popup": "popup.html"
+  "action": {
+    "default_icon": "icon.png"
   },
+  "manifest_version": 3,
+  "version": "0.1",
+  "description": "Chrome extension example",
   "permissions": [
-   "activeTab"
-   ]
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*/",
+    "http://*/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
